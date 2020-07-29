@@ -1,4 +1,4 @@
-# miao
+# MIAO
 
 Empty project.
 

@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   return res.send('Root of directory reached!');
 });
 
-const willSeedDatabase = false;
+const willSeedDatabase = true;
 
 connectDb().then(async () => {
   if (willSeedDatabase) {
@@ -31,6 +31,7 @@ connectDb().then(async () => {
 const createUsers = async () => {
   const user = new models.User({
     username: 'haihenry',
+    profilePic: 'https://cdn2.thecatapi.com/images/bk.jpg',
   });
 
   await user.save();

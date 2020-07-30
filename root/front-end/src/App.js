@@ -1,15 +1,15 @@
-
-import React from "react";
+import React from 'react';
 import { hot } from 'react-hot-loader/root';
+import Navbar from './Components/navbar';
+import Main from './Components/main';
 
 class App extends React.Component {
   render() {
     const { name } = this.props;
     return (
       <>
-        <h1>
-          Hello {name}
-        </h1>
+        <Navbar />
+        <Main />
       </>
     );
   }

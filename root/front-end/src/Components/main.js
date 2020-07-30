@@ -1,7 +1,12 @@
 import React from 'react';
+import PostContainer from './postcontainer';
 
 function Main(props) {
-  return <div>Main section placegolder</div>;
+  return (
+    <div className="main-container">
+      <PostContainer />
+    </div>
+  );
 }
 
 export default Main;

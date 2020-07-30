@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   return res.send('Root of directory reached!');
 });
 
-const willSeedDatabase = true;
+const willSeedDatabase = false;
 
 connectDb().then(async () => {
   if (willSeedDatabase) {

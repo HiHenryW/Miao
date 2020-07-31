@@ -45,6 +45,7 @@ article {
 
 .username-container {
   margin-left: 14px;
+  font-weight: bold;
 }
 
 .postimage-container {
@@ -80,4 +81,8 @@ article {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.post-description {
+  margin-left: 8px;
 }

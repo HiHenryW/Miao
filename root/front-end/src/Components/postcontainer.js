@@ -14,7 +14,7 @@ function PostContainer(props) {
         postLikes={props.postLikes}
         postDislikes={props.postDislikes}
       />
-      <Postdescription postDesc={props.postDesc} />
+      <Postdescription postDesc={props.postDesc} username={props.username} />
       {/* <Postcomments /> */}
     </article>
   );

@@ -71,7 +71,7 @@ connectDb().then(async () => {
     createPosts();
   }
 
-  app.listen(process.env.PORT, () => {
+  app.listen(process.env.PORT || 3000, () => {
     console.log(`Back-end server listening on port ${process.env.PORT}!`);
   });
 });

@@ -6,6 +6,7 @@ import { IconContext } from 'react-icons';
 
 function Postreactions(props) {
   function handleLike() {
+    // console.log(props.postId);
     axios
       .put(`http://localhost:3000/posts/${props.postId}/like`)
       .then(() => {

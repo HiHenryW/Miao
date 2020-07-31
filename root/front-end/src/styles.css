@@ -13,6 +13,11 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 54px;
+  background-color: #ffffff;
+}
+
+.miao-logo {
+  width: 60px;
 }
 
 article {

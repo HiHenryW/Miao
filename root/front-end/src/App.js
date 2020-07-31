@@ -14,6 +14,7 @@ class App extends React.Component {
       postLikes: 0,
       postDislikes: 0,
       postDesc: '',
+      postId: '',
     };
   }
 
@@ -41,6 +42,7 @@ class App extends React.Component {
           postLikes: res.data[0].postLikes,
           postDislikes: res.data[0].postDislikes,
           postDesc: res.data[0].postDesc,
+          postId: res.data[0]._id,
         });
       })
       .catch((err) => {
@@ -59,6 +61,7 @@ class App extends React.Component {
           postLikes={this.state.postLikes}
           postDislikes={this.state.postDislikes}
           postDesc={this.state.postDesc}
+          postId={this.state.postId}
         />
       </>
     );

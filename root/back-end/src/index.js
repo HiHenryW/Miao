@@ -29,6 +29,38 @@ app.get('/posts', (req, res) => {
     });
 });
 
+app.put('/posts/:postId/like', (req, res) => {
+  const query = { _id: req.params.postId };
+  models.Post.findOneAndUpdate(query, {
+    $inc: {
+      postLikes: 1,
+    },
+  })
+    .exec()
+    .then(() => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+app.put('/posts/:postId/dislike', (req, res) => {
+  const query = { _id: req.params.postId };
+  models.Post.findOneAndUpdate(query, {
+    $inc: {
+      postDislikes: 1,
+    },
+  })
+    .exec()
+    .then(() => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 const willSeedDatabase = false;
 
 connectDb().then(async () => {

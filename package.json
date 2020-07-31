@@ -10,7 +10,8 @@
     "clean": "rm dist/bundle.js",
     "build-dev": "webpack -d --mode development",
     "build-prod": "webpack -p --mode production",
-    "start": "webpack --mode production --config ./webpack.config.js"
+    "start": "webpack-dev-server --hot --mode development",
+    "heroku-prebuild": "npm install --dev"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -30,7 +31,8 @@
     "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.0.9"
   },
   "proxy": "http://localhost:3000"
 }

@@ -1,9 +1,10 @@
 import React from 'react';
+import logo from '../../logo/miao-logo.png';
 
 function Navbar(props) {
   return (
     <div className="navbar-container">
-      <img alt="logo placeholder"></img>
+      <img src={logo} alt="miao-logo" className="miao-logo"></img>
       <input className="searchbar" type="text" placeholder="Search"></input>
       <p>
         <img alt="home icon placeholder"></img>

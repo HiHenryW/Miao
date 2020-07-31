@@ -52,7 +52,14 @@ class App extends React.Component {
     return (
       <>
         <Navbar />
-        <Main username={this.state.username} proPic={this.state.proPic} />
+        <Main
+          username={this.state.username}
+          proPic={this.state.proPic}
+          postImage={this.state.postImage}
+          postLikes={this.state.postLikes}
+          postDislikes={this.state.postDislikes}
+          postDesc={this.state.postDesc}
+        />
       </>
     );
   }

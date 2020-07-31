@@ -1,7 +1,11 @@
 import React from 'react';
 
 function Postimage(props) {
-  return <div>Postimage placeholder</div>;
+  return (
+    <div className="postimage-container">
+      <img className="postimage" src={props.postImage}></img>
+    </div>
+  );
 }
 
 export default Postimage;

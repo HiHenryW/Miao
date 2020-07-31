@@ -46,3 +46,13 @@ article {
 .username-container {
   margin-left: 14px;
 }
+
+.postimage-container {
+  max-width: 612px;
+  max-height: 766px;
+}
+
+.postimage {
+  max-width: 100%;
+  max-height: 100%;
+}

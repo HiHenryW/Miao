@@ -10,7 +10,7 @@
     "clean": "rm dist/bundle.js",
     "build-dev": "webpack -d --mode development",
     "build-prod": "webpack -p --mode production",
-    "start": "node ./src/App.js"
+    "start": "webpack --mode production --config ./webpack.prod.config.js"
   },
   "dependencies": {
     "axios": "^0.19.2",

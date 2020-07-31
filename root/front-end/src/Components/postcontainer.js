@@ -13,6 +13,8 @@ function PostContainer(props) {
       <Postreactions
         postLikes={props.postLikes}
         postDislikes={props.postDislikes}
+        postId={props.postId}
+        updateReactions={props.updateReactions}
       />
       <Postdescription postDesc={props.postDesc} username={props.username} />
       {/* <Postcomments /> */}

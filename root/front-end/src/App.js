@@ -16,6 +16,8 @@ class App extends React.Component {
       postDesc: '',
       postId: '',
     };
+
+    this.updateReactions = this.updateReactions.bind(this);
   }
 
   componentDidMount() {
@@ -50,6 +52,20 @@ class App extends React.Component {
       });
   }
 
+  updateReactions() {
+    axios
+      .get('http://localhost:3000/posts')
+      .then((res) => {
+        this.setState({
+          postLikes: res.data[0].postLikes,
+          postDislikes: res.data[0].postDislikes,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
   render() {
     return (
       <>
@@ -62,6 +78,7 @@ class App extends React.Component {
           postDislikes={this.state.postDislikes}
           postDesc={this.state.postDesc}
           postId={this.state.postId}
+          updateReactions={this.updateReactions}
         />
       </>
     );

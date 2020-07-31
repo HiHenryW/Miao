@@ -10,8 +10,8 @@
     "clean": "rm dist/bundle.js",
     "build-dev": "webpack -d --mode development",
     "build-prod": "webpack -p --mode production",
-    "start": "webpack-dev-server --hot --mode development",
-    "heroku-prebuild": "npm install --dev"
+    "start": "node ./back-end/src/index.js",
+    "heroku-postbuild": "webpack -d"
   },
   "dependencies": {
     "axios": "^0.19.2",

@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.static('root'));
 
 app.get('/users', (req, res) => {
   models.User.find({})

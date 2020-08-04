@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
-import User from './user';
-import Post from './post';
+const mongoose = require('mongoose');
+const User = require('./user');
+const Post = require('./post');
 const URI = require('../config');
 
 // console.log('URI: ', URI);
@@ -18,7 +18,6 @@ mongoose.connection.on('error', (err) => {
   console.log('Mongoose Default Connection Error : ' + err);
 });
 
-const models = { User, Post };
+const models = { User, Post, connectDb };
 
-export { connectDb };
-export default models;
+module.exports = models;

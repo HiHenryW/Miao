@@ -10,7 +10,9 @@
     "clean": "rm dist/bundle.js",
     "build-dev": "webpack -d --mode development",
     "build-prod": "webpack -p --mode production",
-    "start": "nodemon --exec babel-node ./back-end/index.js",
+    "web-start": "webpack-dev-server --hot --mode development",
+    "start-dev": "nodemon --exec babel-node ./back-end/index.js",
+    "start": "node ./back-end/index.js",
     "heroku-postbuild": "webpack -d"
   },
   "dependencies": {
@@ -25,6 +27,7 @@
     "mongoose": "^5.9.26"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.0",
     "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.11.0",

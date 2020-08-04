@@ -1,7 +1,7 @@
-import 'dotenv/config';
-import cors from 'cors';
-import express from 'express';
-import models, { connectDb } from './models';
+require('dotenv').config();
+const cors = require('cors');
+const express = require('express');
+const { User, Post, connectDb } = require('./models');
 
 const app = express();
 const bodyParser = require('body-parser');
@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(express.static('./'));
 
 app.get('/users', (req, res) => {
-  models.User.find({})
+  User.find({})
     .then((data) => {
       return res.status(200).json(data);
     })
@@ -21,7 +21,7 @@ app.get('/users', (req, res) => {
 });
 
 app.get('/posts', (req, res) => {
-  models.Post.find({})
+  Post.find({})
     .then((data) => {
       return res.status(200).json(data);
     })
@@ -32,7 +32,7 @@ app.get('/posts', (req, res) => {
 
 app.put('/posts/:postId/like', (req, res) => {
   const query = { _id: req.params.postId };
-  models.Post.findOneAndUpdate(query, {
+  Post.findOneAndUpdate(query, {
     $inc: {
       postLikes: 1,
     },
@@ -48,7 +48,7 @@ app.put('/posts/:postId/like', (req, res) => {
 
 app.put('/posts/:postId/dislike', (req, res) => {
   const query = { _id: req.params.postId };
-  models.Post.findOneAndUpdate(query, {
+  Post.findOneAndUpdate(query, {
     $inc: {
       postDislikes: 1,
     },
@@ -66,7 +66,7 @@ const willSeedDatabase = false;
 
 connectDb().then(async () => {
   if (willSeedDatabase) {
-    await Promise.all([models.User.deleteMany({}), models.Post.deleteMany({})]);
+    await Promise.all([User.deleteMany({}), Post.deleteMany({})]);
 
     createUsers();
     createPosts();
@@ -78,7 +78,7 @@ connectDb().then(async () => {
 });
 
 const createUsers = async () => {
-  const user = new models.User({
+  const user = new User({
     username: 'haihenry',
     profilePic: 'https://cdn2.thecatapi.com/images/bk.jpg',
   });
@@ -87,7 +87,7 @@ const createUsers = async () => {
 };
 
 const createPosts = async () => {
-  const post = new models.Post({
+  const post = new Post({
     username: 'haihenry',
     postImage: 'https://cdn2.thecatapi.com/images/MTk4MTkyMg.jpg',
     postLikes: 8,

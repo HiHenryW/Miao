@@ -1,6 +1,7 @@
 require('dotenv').config();
 const cors = require('cors');
 const express = require('express');
+const path = require('path');
 const { User, Post, connectDb } = require('./models');
 
 const app = express();
@@ -8,7 +9,7 @@ const bodyParser = require('body-parser');
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static('./'));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 app.get('/users', (req, res) => {
   User.find({})

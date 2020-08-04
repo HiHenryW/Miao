@@ -50,7 +50,6 @@ class App extends React.Component {
     axios
       .get('/posts')
       .then((res) => {
-        console.log(res.data);
         let postImages = [];
         let postLikes = [];
         let postDislikes = [];

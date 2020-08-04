@@ -1,6 +1,4 @@
-# MIAO
-
-Empty project.
+# Miao
 
 ## Building and running on localhost
 

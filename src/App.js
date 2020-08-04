@@ -23,7 +23,7 @@ class App extends React.Component {
   componentDidMount() {
     // console.log('componentDidMount entered!');
     axios
-      .get('http://localhost:3000/users')
+      .get('/users')
       .then((res) => {
         let usernames = [];
         let proPics = [];
@@ -48,9 +48,8 @@ class App extends React.Component {
       });
 
     axios
-      .get('http://localhost:3000/posts')
+      .get('/posts')
       .then((res) => {
-        console.log(res.data);
         let postImages = [];
         let postLikes = [];
         let postDislikes = [];
@@ -87,7 +86,7 @@ class App extends React.Component {
 
   updateReactions() {
     axios
-      .get('http://localhost:3000/posts')
+      .get('/posts')
       .then((res) => {
         let postLikes = [];
         let postDislikes = [];

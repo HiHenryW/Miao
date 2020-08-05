@@ -3,6 +3,7 @@ const cors = require('cors');
 const express = require('express');
 const path = require('path');
 const { User, Post, connectDb } = require('./models');
+const { sampleUsers, samplePosts } = require('./seed');
 
 const app = express();
 const bodyParser = require('body-parser');
@@ -74,28 +75,19 @@ connectDb().then(async () => {
     createPosts();
   }
 
-  app.listen(process.env.PORT || 3000, () => {
+  app.listen(process.env.PORT || 8080, () => {
     console.log(`Back-end server listening on port ${process.env.PORT}!`);
   });
 });
 
-const createUsers = async () => {
-  const user = new User({
-    username: 'haihenry',
-    profilePic: 'https://cdn2.thecatapi.com/images/bk.jpg',
+const createUsers = () => {
+  User.create(sampleUsers).catch((err) => {
+    console.log(err);
   });
-
-  await user.save();
 };
 
-const createPosts = async () => {
-  const post = new Post({
-    username: 'haihenry',
-    postImage: 'https://cdn2.thecatapi.com/images/MTk4MTkyMg.jpg',
-    postLikes: 8,
-    postDislikes: 0,
-    postDesc: 'Taking a cat nap with bae. #hottie #respect #catnap',
+const createPosts = () => {
+  Post.create(samplePosts).catch((err) => {
+    console.log(err);
   });
-
-  await post.save();
 };

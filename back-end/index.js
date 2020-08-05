@@ -14,6 +14,7 @@ app.use(express.static(path.join(__dirname, '../dist')));
 
 app.get('/users', (req, res) => {
   User.find({})
+    .exec()
     .then((data) => {
       return res.status(200).json(data);
     })
@@ -24,6 +25,8 @@ app.get('/users', (req, res) => {
 
 app.get('/posts', (req, res) => {
   Post.find({})
+    .sort('-createdAt')
+    .exec()
     .then((data) => {
       return res.status(200).json(data);
     })

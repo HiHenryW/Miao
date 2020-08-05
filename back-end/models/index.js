@@ -7,6 +7,8 @@ const URI = require('../config');
 const connectDb = () => {
   return mongoose.connect(process.env.DATABASE_URL || URI, {
     useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
   });
 };
 

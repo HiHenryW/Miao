@@ -63,6 +63,7 @@ app.put('/posts/:postId/dislike', (req, res) => {
     });
 });
 
+// WARNING: setting this to true will overwrite db data!
 const willSeedDatabase = false;
 
 connectDb().then(async () => {

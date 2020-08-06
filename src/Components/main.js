@@ -2,20 +2,20 @@ import React from 'react';
 import PostContainer from './postcontainer';
 
 function Main(props) {
-  return (
+  return props.posts.map((post) => (
     <div className="main-container">
       <PostContainer
-        username={props.username}
-        proPic={props.proPic}
-        postImage={props.postImage}
-        postLikes={props.postLikes}
-        postDislikes={props.postDislikes}
-        postDesc={props.postDesc}
-        postId={props.postId}
-        updateReactions={props.updateReactions}
+        username={post.username}
+        users={props.users}
+        postImage={post.postImage}
+        postLikes={post.postLikes}
+        postDislikes={post.postDislikes}
+        postDesc={post.postDesc}
+        postId={post.postId}
+        updateReactions={post.updateReactions}
       />
     </div>
-  );
+  ));
 }
 
 export default Main;

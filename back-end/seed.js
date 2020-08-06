@@ -17,7 +17,7 @@ const sampleUsers = [
 
 const samplePosts = [
   {
-    username: 'haihenry',
+    username: 'hihenry',
     postImage: 'https://cdn2.thecatapi.com/images/MTk4MTkyMg.jpg',
     postLikes: 0,
     postDislikes: 0,
@@ -39,7 +39,7 @@ const samplePosts = [
     postDesc: 'This is my best friend Karen. She is pretty ripped.',
   },
   {
-    username: 'haihenry',
+    username: 'hihenry',
     postImage:
       'https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',
     postLikes: 0,
@@ -47,7 +47,7 @@ const samplePosts = [
     postDesc: 'Feeling pretty sleepy, is it Friday yet?',
   },
   {
-    username: 'haihenry',
+    username: 'hihenry',
     postImage:
       'https://images.unsplash.com/photo-1548247416-ec66f4900b2e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=726&q=80',
     postLikes: 0,
@@ -55,7 +55,7 @@ const samplePosts = [
     postDesc: 'Thinking about my covid-19lbs.',
   },
   {
-    username: 'haihenry',
+    username: 'hihenry',
     postImage:
       'https://images.unsplash.com/photo-1493406300581-484b937cdc41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
     postLikes: 0,
@@ -64,7 +64,7 @@ const samplePosts = [
       'Visited the bay the other day. Pretty sick view. Almost fell in!',
   },
   {
-    username: 'haihenry',
+    username: 'hihenry',
     postImage:
       'https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80',
     postLikes: 0,

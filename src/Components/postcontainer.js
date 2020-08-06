@@ -9,18 +9,15 @@ function PostContainer(props) {
   return (
     <>
       <article>
-        <Postheader username={props.username[0]} proPic={props.proPic[0]} />
-        <Postimage postImage={props.postImage[0]} />
+        <Postheader username={props.username} users={props.users} />
+        <Postimage postImage={props.postImage} />
         <Postreactions
-          postLikes={props.postLikes[0]}
-          postDislikes={props.postDislikes[0]}
-          postId={props.postId[0]}
+          postLikes={props.postLikes}
+          postDislikes={props.postDislikes}
+          postId={props.postId}
           updateReactions={props.updateReactions}
         />
-        <Postdescription
-          postDesc={props.postDesc[0]}
-          username={props.username[0]}
-        />
+        <Postdescription postDesc={props.postDesc} username={props.username} />
         {/* <Postcomments /> */}
       </article>
     </>

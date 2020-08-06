@@ -21,7 +21,7 @@ class App extends React.Component {
       // use below for production build
       // .get('/users')
       .then((res) => {
-        console.log('users data:', res.data);
+        // console.log('users data:', res.data);
         this.setState({
           users: res.data,
         });

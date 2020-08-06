@@ -9,7 +9,7 @@ body {
 }
 
 #app {
-  max-width: 935px;
+  max-width: 612px;
   padding-left: 50px;
 }
 
@@ -45,6 +45,7 @@ article {
 
 .main-container {
   padding-top: 0px;
+  margin-bottom: 60px;
 }
 
 .profile-pic-container {
@@ -66,6 +67,7 @@ article {
 .postimage-container {
   max-width: 612px;
   max-height: 766px;
+  overflow: hidden;
 }
 
 .postimage {

@@ -2,8 +2,8 @@ import React from 'react';
 import PostContainer from './postcontainer';
 
 function Main(props) {
-  return props.posts.map((post) => (
-    <div className="main-container">
+  return props.posts.map((post, i) => (
+    <div className="main-container" key={i}>
       <PostContainer
         username={post.username}
         users={props.users}
@@ -11,8 +11,8 @@ function Main(props) {
         postLikes={post.postLikes}
         postDislikes={post.postDislikes}
         postDesc={post.postDesc}
-        postId={post.postId}
-        updateReactions={post.updateReactions}
+        postId={post._id}
+        updateReactions={props.updateReactions}
       />
     </div>
   ));

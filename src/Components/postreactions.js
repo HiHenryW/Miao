@@ -8,7 +8,13 @@ function Postreactions(props) {
   function handleLike() {
     // console.log(props.postId);
     axios
-      .put(`http://localhost:3000/posts/${props.postId}/like`)
+      .put(
+        `http://localhost:${process.env.PORT || 3000}/posts/${
+          props.postId
+        }/like`
+      )
+      // use below for production build
+      // .put(`/posts/${props.postId}/like`)
       .then(() => {
         props.updateReactions();
       })
@@ -19,7 +25,13 @@ function Postreactions(props) {
 
   function handleDislike() {
     axios
-      .put(`http://localhost:3000/posts/${props.postId}/dislike`)
+      .put(
+        `http://localhost:${process.env.PORT || 3000}/posts/${
+          props.postId
+        }/dislike`
+      )
+      // use below for production build
+      // .put(`/posts/${props.postId}/dislike`)
       .then(() => {
         props.updateReactions();
       })

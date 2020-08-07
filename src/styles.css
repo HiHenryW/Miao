@@ -103,3 +103,16 @@ article {
 .post-description {
   margin-left: 8px;
 }
+
+.comment-form-container {
+  justify-content: center;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.comment-form {
+  display: grid;
+  grid-template-columns: 19fr 1fr;
+  height: 19px;
+  max-height: 80px;
+}

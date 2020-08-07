@@ -4,6 +4,7 @@ import Postimage from './postimage';
 import Postreactions from './postreactions';
 import Postdescription from './postdescription';
 // import Postcomments from './postcomments';
+import Commentform from './commentform';
 
 function PostContainer(props) {
   return (
@@ -19,6 +20,7 @@ function PostContainer(props) {
         />
         <Postdescription postDesc={props.postDesc} username={props.username} />
         {/* <Postcomments /> */}
+        <Commentform />
       </article>
     </>
   );

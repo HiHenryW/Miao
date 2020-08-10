@@ -2,7 +2,7 @@ require('dotenv').config();
 const cors = require('cors');
 const express = require('express');
 const path = require('path');
-const { User, Post, connectDb } = require('./models');
+const { User, Post, Comments, connectDb } = require('./models');
 const { sampleUsers, samplePosts } = require('./seed');
 
 const app = express();
@@ -65,6 +65,22 @@ app.put('/posts/:postId/dislike', (req, res) => {
     .catch((err) => {
       console.log(err);
     });
+});
+
+app.post('/posts/:postId', (req, res) => {
+  const comment = new Comments({
+    postId: req.params.postId,
+    commentText: req.body.commentText,
+    username: req.body.username,
+  });
+  comment.save((err, comment) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+
+    res.status(201).json(comment);
+  });
 });
 
 // WARNING: setting this to true will overwrite db data!

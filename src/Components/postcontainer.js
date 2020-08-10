@@ -20,7 +20,7 @@ function PostContainer(props) {
         />
         <Postdescription postDesc={props.postDesc} username={props.username} />
         {/* <Postcomments /> */}
-        <Commentform />
+        <Commentform postId={props.postId} />
       </article>
     </>
   );

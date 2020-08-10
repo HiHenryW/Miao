@@ -71,7 +71,7 @@ app.post('/posts/:postId', (req, res) => {
   const comment = new Comments({
     postId: req.params.postId,
     commentText: req.body.commentText,
-    username: req.body.username,
+    userName: req.body.userName,
   });
   comment.save((err, comment) => {
     if (err) {

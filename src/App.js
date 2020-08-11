@@ -8,6 +8,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      currentUser: 'hihenry',
       users: [],
       posts: [],
     };
@@ -62,7 +63,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Navbar />
+        <Navbar users={this.state.users} currentUser={this.state.currentUser} />
         <Main
           users={this.state.users}
           posts={this.state.posts}

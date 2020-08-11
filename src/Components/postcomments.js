@@ -16,7 +16,7 @@ function Postcomments(props) {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  });
 
   return (
     <div className="comment-list-container">

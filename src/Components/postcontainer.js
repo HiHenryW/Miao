@@ -4,6 +4,7 @@ import Postimage from './postimage';
 import Postreactions from './postreactions';
 import Postdescription from './postdescription';
 import Postcomments from './postcomments';
+import Timestamp from './timestamp';
 import Commentform from './commentform';
 
 function PostContainer(props) {
@@ -20,6 +21,7 @@ function PostContainer(props) {
         />
         <Postdescription postDesc={props.postDesc} username={props.username} />
         <Postcomments postId={props.postId} />
+        <Timestamp createdAt={props.createdAt} />
         <Commentform postId={props.postId} />
       </article>
     </>

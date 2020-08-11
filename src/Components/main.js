@@ -12,6 +12,7 @@ function Main(props) {
         postDislikes={post.postDislikes}
         postDesc={post.postDesc}
         postId={post._id}
+        createdAt={post.createdAt}
         updateReactions={props.updateReactions}
       />
     </div>

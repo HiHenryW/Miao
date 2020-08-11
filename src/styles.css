@@ -116,3 +116,9 @@ article {
   height: 19px;
   max-height: 80px;
 }
+
+.comment-list-container {
+  justify-content: center;
+  padding-left: 16px;
+  padding-right: 16px;
+}

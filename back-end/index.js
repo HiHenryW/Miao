@@ -83,6 +83,19 @@ app.post('/posts/:postId', (req, res) => {
   });
 });
 
+app.get('/posts/:postId', (req, res) => {
+  const query = { postId: req.params.postId };
+  Comments.find(query)
+    .sort('+createdAt')
+    .exec()
+    .then((data) => {
+      return res.status(200).json(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 // WARNING: setting this to true will overwrite db data!
 const willSeedDatabase = false;
 

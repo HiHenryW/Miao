@@ -3,7 +3,7 @@ import Postheader from './postheader';
 import Postimage from './postimage';
 import Postreactions from './postreactions';
 import Postdescription from './postdescription';
-// import Postcomments from './postcomments';
+import Postcomments from './postcomments';
 import Commentform from './commentform';
 
 function PostContainer(props) {
@@ -19,7 +19,7 @@ function PostContainer(props) {
           updateReactions={props.updateReactions}
         />
         <Postdescription postDesc={props.postDesc} username={props.username} />
-        {/* <Postcomments /> */}
+        <Postcomments postId={props.postId} />
         <Commentform postId={props.postId} />
       </article>
     </>

@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../logo/miao-logo.png';
 import { AiFillHome, AiOutlineHome } from 'react-icons/ai';
+import { IconContext } from 'react-icons';
 
 function Navbar(props) {
   function getProPic(users, username) {
@@ -15,19 +16,21 @@ function Navbar(props) {
     <div className="navbar-container">
       <img src={logo} alt="miao-logo" className="miao-logo"></img>
       <input className="searchbar" type="text" placeholder="Search"></input>
-      <p>
+      <div className="navbar-icons-container">
         <a>
-          <AiFillHome />
+          <IconContext.Provider value={{ size: '22px' }}>
+            <AiFillHome />
+          </IconContext.Provider>
         </a>
         <a>
-          <div className="profile-pic-container">
+          <div className="profile-pic-container-navbar">
             <img
               className="profile-pic"
               src={getProPic(props.users, props.currentUser)}
             ></img>
           </div>
         </a>
-      </p>
+      </div>
     </div>
   );
 }

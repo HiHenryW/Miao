@@ -1,8 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import { GiMeat } from 'react-icons/gi';
-import { FaPoop } from 'react-icons/fa';
-import { IconContext } from 'react-icons';
+import fish from '../assets/fish.png';
+import poop from '../assets/poop.png';
 
 function Postreactions(props) {
   function handleLike() {
@@ -43,16 +42,13 @@ function Postreactions(props) {
   return (
     <div className="reactions-container">
       <span className="likes-container" onClick={handleLike}>
-        <IconContext.Provider value={{ color: 'blue', size: '24px' }}>
-          <GiMeat />
-          {props.postLikes}
-        </IconContext.Provider>
+        <img src={fish} alt="fish-icon" className="fish-icon"></img>
+        {props.postLikes}
       </span>
       <span className="dislikes-container" onClick={handleDislike}>
-        <IconContext.Provider value={{ color: 'brown', size: '15px' }}>
-          <FaPoop />
-          {props.postDislikes}
-        </IconContext.Provider>
+        <img src={poop} alt="poop-icon" className="poop-icon"></img>
+
+        {props.postDislikes}
       </span>
     </div>
   );

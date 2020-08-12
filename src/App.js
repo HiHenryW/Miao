@@ -63,12 +63,20 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Navbar users={this.state.users} currentUser={this.state.currentUser} />
-        <Main
-          users={this.state.users}
-          posts={this.state.posts}
-          updateReactions={this.updateReactions}
-        />
+        <div className="nav-wrapper">
+          <Navbar
+            users={this.state.users}
+            currentUser={this.state.currentUser}
+          />
+        </div>
+        <div className="nav-whitespace"></div>
+        <div className="main-wrapper">
+          <Main
+            users={this.state.users}
+            posts={this.state.posts}
+            updateReactions={this.updateReactions}
+          />
+        </div>
       </>
     );
   }

@@ -60,8 +60,11 @@ class Commentform extends React.Component {
               placeholder="Add a comment..."
               value={this.state.commentText}
               onChange={this.handleChange}
+              className="comment-text"
             ></textarea>
-            <button type="submit">Post</button>
+            <button type="submit" className="comment-button">
+              Post
+            </button>
           </form>
         </div>
       </section>

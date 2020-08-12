@@ -22,8 +22,8 @@ function Postcomments(props) {
     <div className="comment-list-container">
       {comments.map((comment, i) => {
         return (
-          <div key={i}>
-            <a>{comment.userName}</a>
+          <div key={i} className="comment-list-item">
+            <a className="comment-list-user">{comment.userName}</a>
             <span>{comment.commentText}</span>
           </div>
         );

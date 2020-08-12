@@ -43,12 +43,16 @@ function Postreactions(props) {
     <div className="reactions-container">
       <span className="likes-container" onClick={handleLike}>
         <img src={fish} alt="fish-icon" className="fish-icon"></img>
-        {props.postLikes}
+        <span className="reaction-count">
+          {props.postLikes} {props.postLikes === 1 ? 'Like' : 'Likes'}
+        </span>
       </span>
       <span className="dislikes-container" onClick={handleDislike}>
         <img src={poop} alt="poop-icon" className="poop-icon"></img>
-
-        {props.postDislikes}
+        <span className="reaction-count">
+          {props.postDislikes}{' '}
+          {props.postDislikes === 1 ? 'Dislike' : 'Dislikes'}
+        </span>
       </span>
     </div>
   );

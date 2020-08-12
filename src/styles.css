@@ -7,6 +7,7 @@ html,
 body {
   background-color: rgb(250, 250, 250);
   font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
 }
 
 /*********************************/
@@ -65,8 +66,14 @@ body {
   margin: auto;
 }
 
+.main-container {
+  padding-top: 0px;
+  margin-bottom: 60px;
+}
+
 article {
   border: 1px solid rgb(219, 219, 219);
+  background: #ffffff;
 }
 
 .postheader {
@@ -77,9 +84,10 @@ article {
   align-items: center;
 }
 
-.main-container {
-  padding-top: 0px;
-  margin-bottom: 60px;
+.username-container {
+  margin-left: 14px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .profile-pic-container {
@@ -99,11 +107,6 @@ article {
   border-radius: 50%;
 }
 
-.username-container {
-  margin-left: 14px;
-  font-weight: bold;
-}
-
 .postimage-container {
   max-width: 612px;
   max-height: 766px;
@@ -116,38 +119,99 @@ article {
 }
 
 .reactions-container {
-  height: 50px;
+  height: 40px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .likes-container {
-  padding: 8px;
-  width: 40px;
   height: 40px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
+.likes-container:hover {
+  cursor: pointer;
+}
+
 .dislikes-container {
-  padding: 8px;
-  width: 40px;
+  padding-left: 16px;
   height: 40px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.dislikes-container:hover {
+  cursor: pointer;
+}
+
+.fish-icon {
+  height: 30px;
+  width: 30px;
+  margin-right: 8px;
+}
+
+.poop-icon {
+  height: 23px;
+  width: 23px;
+  margin-right: 8px;
+}
+
+.reaction-count {
+  display: inline-block;
+  color: #8e8e8e;
+  font-size: 12px;
+}
+
+.description-container {
+  height: 18px;
 }
 
 .post-description {
   margin-left: 8px;
 }
 
-.comment-form-container {
+.comment-list-container {
   justify-content: center;
   padding-left: 16px;
   padding-right: 16px;
+}
+
+.comment-list-item {
+  height: 18px;
+}
+
+.comment-list-user {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.timestamp {
+  justify-content: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #8e8e8e;
+  height: 18px;
+  margin: 4px 0px;
+}
+
+.comment-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  min-height: 56px;
+  border-top: solid 1px rgb(219, 219, 219);
 }
 
 .comment-form {
@@ -157,24 +221,19 @@ article {
   max-height: 80px;
 }
 
-.comment-list-container {
-  justify-content: center;
-  padding-left: 16px;
-  padding-right: 16px;
+.comment-text {
+  font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+  border-style: none;
+  resize: none;
 }
 
-.timestamp {
-  justify-content: center;
-  padding-left: 16px;
-  padding-right: 16px;
+.comment-button {
+  border-style: none;
+  background: #ffffff;
+  font-weight: bold;
+  color: rgb(0, 149, 246);
 }
 
-.fish-icon {
-  height: 22px;
-  width: 22px;
-}
-
-.poop-icon {
-  height: 20px;
-  width: 20px;
+.comment-button:hover {
+  cursor: pointer;
 }

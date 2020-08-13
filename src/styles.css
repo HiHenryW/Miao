@@ -252,3 +252,65 @@ article {
 .comment-button:hover {
   cursor: pointer;
 }
+
+/**********************************/
+/********** PROFILE PAGE **********/
+/**********************************/
+
+.main-wrapper-profile {
+  min-width: 736px;
+  max-width: 935px;
+  margin: auto;
+  background-color: salmon;
+}
+
+.navbar-container-profile {
+  min-width: 736px;
+  max-width: 935px;
+  margin: auto;
+  padding: 0;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 54px;
+}
+
+/* -------- Profile Header -------- */
+
+.profile-header {
+  background-color: sandybrown;
+  margin-bottom: 44px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.profile-picture-wrapper {
+  background-color: seagreen;
+  margin-right: 30px;
+  display: grid;
+  justify-content: center;
+}
+
+.profile-picture {
+  background-color: black;
+  height: 150px;
+  width: 150px;
+}
+
+.profile-details-wrapper {
+  background-color: skyblue;
+  display: grid;
+}
+
+.profile-username {
+  background-color: blanchedalmond;
+}
+
+.profile-posts-follow {
+  background-color: chartreuse;
+}
+
+.profile-description {
+  background-color: slateblue;
+}

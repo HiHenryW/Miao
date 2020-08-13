@@ -13,7 +13,13 @@ function Navbar(props) {
   }
 
   return (
-    <div className="navbar-container">
+    <div
+      className={
+        props.currentView === 'home'
+          ? 'navbar-container'
+          : 'navbar-container-profile'
+      }
+    >
       <img src={logo} alt="miao-logo" className="miao-logo"></img>
       <input className="searchbar" type="text" placeholder="Search"></input>
       <div className="navbar-icons-container">

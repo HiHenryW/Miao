@@ -1,7 +1,12 @@
 import React from 'react';
+import Profileheader from './profileheader';
 
 function Profile(props) {
-  return <div className="main-container">Profile placeholder</div>;
+  return (
+    <div>
+      <Profileheader />
+    </div>
+  );
 }
 
 export default Profile;

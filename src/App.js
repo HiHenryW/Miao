@@ -103,7 +103,7 @@ class App extends React.Component {
             />
           </div>
           <div className="nav-whitespace"></div>
-          <div className="main-wrapper">
+          <div className="main-wrapper-profile">
             <Profile />
           </div>
         </>

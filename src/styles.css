@@ -22,7 +22,7 @@ body {
 }
 
 .nav-whitespace {
-  height: 114px;
+  height: 87px;
 }
 
 .navbar-container {
@@ -261,7 +261,6 @@ article {
   min-width: 736px;
   max-width: 935px;
   margin: auto;
-  background-color: salmon;
 }
 
 .navbar-container-profile {
@@ -279,38 +278,52 @@ article {
 /* -------- Profile Header -------- */
 
 .profile-header {
-  background-color: sandybrown;
   margin-bottom: 44px;
   display: grid;
   grid-template-columns: 1fr 3fr;
 }
 
 .profile-picture-wrapper {
-  background-color: seagreen;
   margin-right: 30px;
   display: grid;
   justify-content: center;
 }
 
 .profile-picture {
-  background-color: black;
   height: 150px;
   width: 150px;
+  border-radius: 50%;
 }
 
 .profile-details-wrapper {
-  background-color: skyblue;
   display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .profile-username {
-  background-color: blanchedalmond;
+  display: flex;
+  font-size: 28px;
+  align-items: center;
 }
 
 .profile-posts-follow {
-  background-color: chartreuse;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.profile-posts-follow li {
+  font-size: 16px;
+  margin-right: 40px;
+  list-style: none;
+}
+
+.profile-details-numbers {
+  font-weight: bold;
 }
 
 .profile-description {
-  background-color: slateblue;
+  display: flex;
+  font-size: 16px;
+  align-items: center;
 }

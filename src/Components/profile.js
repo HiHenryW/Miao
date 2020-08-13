@@ -4,7 +4,11 @@ import Profileheader from './profileheader';
 function Profile(props) {
   return (
     <div>
-      <Profileheader />
+      <Profileheader
+        currentUser={props.currentUser}
+        users={props.users}
+        totalPosts={props.totalPosts}
+      />
     </div>
   );
 }

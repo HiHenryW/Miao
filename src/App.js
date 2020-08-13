@@ -11,12 +11,14 @@ class App extends React.Component {
     this.state = {
       currentUser: 'hihenry',
       currentView: 'home',
+      totalPosts: 0,
       users: [],
       posts: [],
     };
 
     this.updateReactions = this.updateReactions.bind(this);
     this.updateView = this.updateView.bind(this);
+    this.countPosts = this.countPosts.bind(this);
   }
 
   componentDidMount() {
@@ -39,9 +41,17 @@ class App extends React.Component {
       // use below for production build
       // .get('/posts')
       .then((res) => {
-        this.setState({
-          posts: res.data,
-        });
+        // console.log(res.data);
+        this.setState(
+          {
+            posts: res.data,
+          },
+          () => {
+            this.setState({
+              totalPosts: this.countPosts(res.data, this.state.currentUser),
+            });
+          }
+        );
       })
       .catch((err) => {
         console.log(err);
@@ -67,6 +77,16 @@ class App extends React.Component {
     this.setState({
       currentView: newView,
     });
+  }
+
+  countPosts(array, currentUser) {
+    let postCount = 0;
+    for (let i = 0; i < array.length; i++) {
+      if (array[i].username === currentUser) {
+        postCount += 1;
+      }
+    }
+    return postCount;
   }
 
   render() {
@@ -104,7 +124,12 @@ class App extends React.Component {
           </div>
           <div className="nav-whitespace"></div>
           <div className="main-wrapper-profile">
-            <Profile />
+            <Profile
+              users={this.state.users}
+              currentUser={this.state.currentUser}
+              posts={this.state.posts}
+              totalPosts={this.state.totalPosts}
+            />
           </div>
         </>
       );

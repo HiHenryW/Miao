@@ -1,5 +1,6 @@
 import React from 'react';
 import Profileheader from './profileheader';
+import Profilebody from './profilebody';
 
 function Profile(props) {
   return (
@@ -9,6 +10,7 @@ function Profile(props) {
         users={props.users}
         totalPosts={props.totalPosts}
       />
+      <Profilebody currentUser={props.currentUser} posts={props.posts} />
     </div>
   );
 }

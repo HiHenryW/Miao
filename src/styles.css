@@ -327,3 +327,21 @@ article {
   font-size: 16px;
   align-items: center;
 }
+
+/* -------- Profile Body -------- */
+
+.photo-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 28px;
+}
+
+.photo-box {
+  height: 293px;
+  overflow: hidden;
+}
+
+.photo-box img {
+  height: auto;
+  width: 100%;
+}

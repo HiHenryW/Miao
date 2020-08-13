@@ -33,3 +33,5 @@ Open the file `dist/index.html` in your browser
 ## Credits
 
 Made with [createapp.dev](https://createapp.dev/)
+
+Icons made by [Those Icons](https://www.flaticon.com/authors/those-icons) and [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](https://www.flaticon.com/)

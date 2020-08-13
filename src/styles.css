@@ -57,6 +57,33 @@ body {
   background: rgb(250, 250, 250);
 }
 
+.navbar-home:hover {
+  cursor: pointer;
+}
+
+.profile-pic-container-navbar {
+  width: 22px;
+  height: 22px;
+  margin-left: 22px;
+}
+
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.profile-pic-outlined {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgb(38, 38, 38);
+}
+
+.profile-pic:hover {
+  cursor: pointer;
+}
+
 /*******************************/
 /********** MAIN BODY **********/
 /*******************************/
@@ -93,18 +120,6 @@ article {
 .profile-pic-container {
   width: 32px;
   height: 32px;
-}
-
-.profile-pic-container-navbar {
-  width: 22px;
-  height: 22px;
-  margin-left: 22px;
-}
-
-.profile-pic {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
 }
 
 .postimage-container {

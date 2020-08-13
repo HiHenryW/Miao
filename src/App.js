@@ -3,17 +3,20 @@ import { hot } from 'react-hot-loader/root';
 import axios from 'axios';
 import Navbar from './Components/navbar';
 import Main from './Components/main';
+import Profile from './Components/profile';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       currentUser: 'hihenry',
+      currentView: 'home',
       users: [],
       posts: [],
     };
 
     this.updateReactions = this.updateReactions.bind(this);
+    this.updateView = this.updateView.bind(this);
   }
 
   componentDidMount() {
@@ -60,25 +63,52 @@ class App extends React.Component {
       });
   }
 
+  updateView(newView) {
+    this.setState({
+      currentView: newView,
+    });
+  }
+
   render() {
-    return (
-      <>
-        <div className="nav-wrapper">
-          <Navbar
-            users={this.state.users}
-            currentUser={this.state.currentUser}
-          />
-        </div>
-        <div className="nav-whitespace"></div>
-        <div className="main-wrapper">
-          <Main
-            users={this.state.users}
-            posts={this.state.posts}
-            updateReactions={this.updateReactions}
-          />
-        </div>
-      </>
-    );
+    if (this.state.currentView === 'home') {
+      return (
+        <>
+          <div className="nav-wrapper">
+            <Navbar
+              users={this.state.users}
+              currentUser={this.state.currentUser}
+              currentView={this.state.currentView}
+              updateView={this.updateView}
+            />
+          </div>
+          <div className="nav-whitespace"></div>
+          <div className="main-wrapper">
+            <Main
+              users={this.state.users}
+              posts={this.state.posts}
+              updateReactions={this.updateReactions}
+            />
+          </div>
+        </>
+      );
+    } else if (this.state.currentView === 'profile') {
+      return (
+        <>
+          <div className="nav-wrapper">
+            <Navbar
+              users={this.state.users}
+              currentUser={this.state.currentUser}
+              currentView={this.state.currentView}
+              updateView={this.updateView}
+            />
+          </div>
+          <div className="nav-whitespace"></div>
+          <div className="main-wrapper">
+            <Profile />
+          </div>
+        </>
+      );
+    }
   }
 }
 

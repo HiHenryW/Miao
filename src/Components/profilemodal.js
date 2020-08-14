@@ -18,6 +18,13 @@ function Profilemodal(props) {
             <MdClose />
           </IconContext.Provider>
         </span>
+        <div className="modal-content-outer">
+          <div className="modal-content-middle">
+            <div className="modal-content-inner">
+              <div className="modal-content">Modal content</div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   } else {

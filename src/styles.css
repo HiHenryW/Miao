@@ -339,9 +339,23 @@ article {
 .photo-box {
   height: 293px;
   overflow: hidden;
+  background-color: black;
 }
 
 .photo-box img {
   height: auto;
   width: 100%;
+}
+
+.photo-box img:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.5s;
+}
+
+/* -------- Popup Modal -------- */
+
+.modal-wrapper {
+  font-size: 25px;
+  z-index: 1;
 }

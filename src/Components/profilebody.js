@@ -22,7 +22,7 @@ function Profilebody(props) {
           }
         })}
       </div>
-      <Profilemodal modalVisible={modalVisible} />
+      <Profilemodal modalVisible={modalVisible} setVisibility={setVisibility} />
     </>
   );
 }

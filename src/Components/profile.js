@@ -4,7 +4,7 @@ import Profilebody from './profilebody';
 
 function Profile(props) {
   return (
-    <div>
+    <div className="profile-body-wrapper">
       <Profileheader
         currentUser={props.currentUser}
         users={props.users}

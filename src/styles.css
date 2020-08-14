@@ -112,7 +112,6 @@ article {
 }
 
 .username-container {
-  margin-left: 14px;
   font-weight: bold;
   font-size: 14px;
 }
@@ -120,6 +119,7 @@ article {
 .profile-pic-container {
   width: 32px;
   height: 32px;
+  margin-right: 14px;
 }
 
 .postimage-container {
@@ -186,7 +186,9 @@ article {
 }
 
 .description-container {
-  height: 18px;
+  min-height: 18px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .post-description {
@@ -200,7 +202,7 @@ article {
 }
 
 .comment-list-item {
-  height: 18px;
+  min-height: 18px;
 }
 
 .comment-list-user {
@@ -396,8 +398,35 @@ article {
 }
 
 .modal-content-inner {
-  background-color: aqua;
   margin-left: auto;
   margin-right: auto;
   max-width: 935px;
+}
+
+.modal-content-wrapper {
+  display: grid;
+  grid-template-columns: 600px 335px;
+}
+
+.modal-content-image-wrapper {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.modal-content-image {
+  width: 100%;
+  height: auto;
+}
+
+.modal-details-wrapper {
+  width: 100%;
+  background-color: #ffffff;
+  display: grid;
+  grid-template-rows: 72px auto 45px 56px;
+}
+
+.modal-interactive-container {
+  display: flex;
+  flex-direction: column;
 }

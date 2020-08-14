@@ -10,7 +10,12 @@ function Profile(props) {
         users={props.users}
         totalPosts={props.totalPosts}
       />
-      <Profilebody currentUser={props.currentUser} posts={props.posts} />
+      <Profilebody
+        currentUser={props.currentUser}
+        posts={props.posts}
+        users={props.users}
+        updateReactions={props.updateReactions}
+      />
     </div>
   );
 }

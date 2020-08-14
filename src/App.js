@@ -129,6 +129,7 @@ class App extends React.Component {
               currentUser={this.state.currentUser}
               posts={this.state.posts}
               totalPosts={this.state.totalPosts}
+              updateReactions={this.updateReactions}
             />
           </div>
         </>

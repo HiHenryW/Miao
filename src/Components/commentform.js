@@ -53,7 +53,7 @@ class Commentform extends React.Component {
 
   render() {
     return (
-      <section className="comment-form-container">
+      <section className="comment-form-container" id="comment-form-reuse">
         <div>
           <form className="comment-form" onSubmit={this.handleSubmit}>
             <textarea

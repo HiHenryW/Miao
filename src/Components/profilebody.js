@@ -3,6 +3,7 @@ import Profilemodal from './profilemodal';
 
 function Profilebody(props) {
   const [modalVisible, setVisibility] = useState(false);
+  const [currentImage, setCurrentImage] = useState('');
 
   return (
     <>
@@ -15,6 +16,7 @@ function Profilebody(props) {
                   src={post.postImage}
                   onClick={() => {
                     setVisibility(true);
+                    setCurrentImage(post);
                   }}
                 ></img>
               </div>
@@ -22,7 +24,14 @@ function Profilebody(props) {
           }
         })}
       </div>
-      <Profilemodal modalVisible={modalVisible} setVisibility={setVisibility} />
+      <Profilemodal
+        modalVisible={modalVisible}
+        setVisibility={setVisibility}
+        currentImage={currentImage}
+        users={props.users}
+        currentUser={props.currentUser}
+        updateReactions={props.updateReactions}
+      />
     </>
   );
 }

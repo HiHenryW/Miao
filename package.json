@@ -13,7 +13,7 @@
     "web-start": "webpack-dev-server --hot --mode development",
     "start-dev": "nodemon --exec babel-node ./back-end/index.js",
     "start": "node ./back-end/index.js",
-    "heroku-postbuild": "webpack -p"
+    "heroku-postbuild": "webpack -d"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -21,7 +21,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "moment": "^2.27.0",
-    "mongoose": "^5.9.26",
+    "mongoose": "^5.10.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hot-loader": "^4.12.21",
@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.11.0",
+    "@babel/core": "^7.11.1",
     "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.1",

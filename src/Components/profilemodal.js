@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { MdClose } from 'react-icons/Md';
+import { MdClose } from 'react-icons/md';
 import { IconContext } from 'react-icons';
 import Commentform from './commentform';
 import Postheader from './postheader';

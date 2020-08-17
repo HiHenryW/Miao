@@ -32,6 +32,7 @@ function Profilebody(props) {
         users={props.users}
         currentUser={props.currentUser}
         updateReactions={props.updateReactions}
+        updateLocalStorage={props.updateLocalStorage}
       />
     </>
   );

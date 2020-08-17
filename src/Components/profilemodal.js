@@ -75,6 +75,7 @@ function Profilemodal(props) {
                     postDislikes={props.currentImage.postDislikes}
                     postId={props.currentImage._id}
                     updateReactions={props.updateReactions}
+                    updateLocalStorage={props.updateLocalStorage}
                   />
                   <Commentform
                     postId={props.currentImage._id}

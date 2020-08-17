@@ -153,6 +153,7 @@ class App extends React.Component {
               posts={this.state.posts}
               totalPosts={this.state.totalPosts}
               updateReactions={this.updateReactions}
+              updateLocalStorage={this.updateLocalStorage}
             />
           </div>
         </>
@@ -176,6 +177,7 @@ class App extends React.Component {
               posts={this.state.posts}
               totalPosts={this.state.totalPosts}
               updateReactions={this.updateReactions}
+              updateLocalStorage={this.updateLocalStorage}
             />
           </div>
         </>
@@ -199,6 +201,7 @@ class App extends React.Component {
               posts={this.state.posts}
               totalPosts={this.state.totalPosts}
               updateReactions={this.updateReactions}
+              updateLocalStorage={this.updateLocalStorage}
             />
           </div>
         </>

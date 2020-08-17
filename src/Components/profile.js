@@ -15,6 +15,7 @@ function Profile(props) {
         posts={props.posts}
         users={props.users}
         updateReactions={props.updateReactions}
+        updateLocalStorage={props.updateLocalStorage}
       />
     </div>
   );

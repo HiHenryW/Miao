@@ -14,6 +14,7 @@ function Main(props) {
         postId={post._id}
         createdAt={post.createdAt}
         updateReactions={props.updateReactions}
+        updateView={props.updateView}
       />
     </div>
   ));

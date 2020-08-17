@@ -2,16 +2,19 @@ const sampleUsers = [
   {
     username: 'hihenry',
     profilePic: 'https://cdn2.thecatapi.com/images/bk.jpg',
+    description: 'Based in NYC currently.',
   },
   {
     username: 'whatdoesthefoxsay',
     profilePic:
       'https://images.unsplash.com/photo-1516934024742-b461fba47600?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
+    description: 'I work the hardest and play the hardest.',
   },
   {
     username: 'skinnygrizzly',
     profilePic:
       'https://images.dog.ceo/breeds/mastiff-tibetan/n02108551_340.jpg',
+    description: 'My spirit animal is a grizzly bear.',
   },
 ];
 

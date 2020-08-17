@@ -7,6 +7,9 @@ function Postheader(props) {
         <img
           className="profile-pic"
           src={getProPic(props.users, props.username)}
+          onClick={() => {
+            props.updateView(props.username);
+          }}
         ></img>
       </div>
       <div className="username-container">{props.username}</div>

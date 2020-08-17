@@ -107,6 +107,7 @@ class App extends React.Component {
               users={this.state.users}
               posts={this.state.posts}
               updateReactions={this.updateReactions}
+              updateView={this.updateView}
             />
           </div>
         </>
@@ -127,6 +128,52 @@ class App extends React.Component {
             <Profile
               users={this.state.users}
               currentUser={this.state.currentUser}
+              posts={this.state.posts}
+              totalPosts={this.state.totalPosts}
+              updateReactions={this.updateReactions}
+            />
+          </div>
+        </>
+      );
+    } else if (this.state.currentView === 'whatdoesthefoxsay') {
+      return (
+        <>
+          <div className="nav-wrapper">
+            <Navbar
+              users={this.state.users}
+              currentUser={this.state.currentUser}
+              currentView={this.state.currentView}
+              updateView={this.updateView}
+            />
+          </div>
+          <div className="nav-whitespace"></div>
+          <div className="main-wrapper-profile">
+            <Profile
+              users={this.state.users}
+              currentUser={'whatdoesthefoxsay'}
+              posts={this.state.posts}
+              totalPosts={this.state.totalPosts}
+              updateReactions={this.updateReactions}
+            />
+          </div>
+        </>
+      );
+    } else if (this.state.currentView === 'skinnygrizzly') {
+      return (
+        <>
+          <div className="nav-wrapper">
+            <Navbar
+              users={this.state.users}
+              currentUser={this.state.currentUser}
+              currentView={this.state.currentView}
+              updateView={this.updateView}
+            />
+          </div>
+          <div className="nav-whitespace"></div>
+          <div className="main-wrapper-profile">
+            <Profile
+              users={this.state.users}
+              currentUser={'skinnygrizzly'}
               posts={this.state.posts}
               totalPosts={this.state.totalPosts}
               updateReactions={this.updateReactions}

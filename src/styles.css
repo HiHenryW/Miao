@@ -349,8 +349,10 @@ article {
 }
 
 .photo-box img {
-  height: auto;
-  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  max-height: 150%;
+  max-width: 150%;
 }
 
 .photo-box img:hover {
@@ -415,8 +417,10 @@ article {
 }
 
 .modal-content-image {
-  width: 100%;
-  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  max-height: 150%;
+  max-width: 150%;
 }
 
 .modal-details-wrapper {

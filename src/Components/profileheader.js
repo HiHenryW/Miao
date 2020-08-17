@@ -17,13 +17,15 @@ function Profileheader(props) {
             posts
           </li>
           <li>
-            <span className="profile-details-numbers">X</span> followers
+            <span className="profile-details-numbers">2</span> followers
           </li>
           <li>
-            <span className="profile-details-numbers">X</span> following
+            <span className="profile-details-numbers">2</span> following
           </li>
         </ul>
-        <div className="profile-description">Based in NYC currently.</div>
+        <div className="profile-description">
+          {getProDes(props.users, props.currentUser)}
+        </div>
       </section>
     </header>
   );
@@ -32,6 +34,14 @@ function Profileheader(props) {
     for (let i = 0; i < users.length; i++) {
       if (users[i].username === username) {
         return users[i].profilePic;
+      }
+    }
+  }
+
+  function getProDes(users, username) {
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].username === username) {
+        return users[i].description;
       }
     }
   }

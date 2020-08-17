@@ -11,7 +11,11 @@ function PostContainer(props) {
   return (
     <>
       <article>
-        <Postheader username={props.username} users={props.users} />
+        <Postheader
+          username={props.username}
+          users={props.users}
+          updateView={props.updateView}
+        />
         <Postimage postImage={props.postImage} />
         <Postreactions
           postLikes={props.postLikes}

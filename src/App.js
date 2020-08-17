@@ -24,9 +24,9 @@ class App extends React.Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:${process.env.PORT || 3000}/users`)
+      // .get(`http://localhost:${process.env.PORT || 3000}/users`)
       // use below for production build
-      // .get('/users')
+      .get('/users')
       .then((res) => {
         // console.log('users data:', res.data);
         this.setState({
@@ -38,9 +38,9 @@ class App extends React.Component {
       });
 
     axios
-      .get(`http://localhost:${process.env.PORT || 3000}/posts`)
+      // .get(`http://localhost:${process.env.PORT || 3000}/posts`)
       // use below for production build
-      // .get('/posts')
+      .get('/posts')
       .then((res) => {
         // console.log(res.data);
         this.setState(
@@ -61,9 +61,9 @@ class App extends React.Component {
 
   updateReactions() {
     axios
-      .get(`http://localhost:${process.env.PORT || 3000}/posts`)
+      // .get(`http://localhost:${process.env.PORT || 3000}/posts`)
       // use below for production build
-      // .get('/posts')
+      .get('/posts')
       .then((res) => {
         this.setState({
           posts: res.data,

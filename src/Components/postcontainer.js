@@ -14,9 +14,9 @@ function PostContainer(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:${process.env.PORT || 3000}/posts/${props.postId}`)
+      // .get(`http://localhost:${process.env.PORT || 3000}/posts/${props.postId}`)
       // use below for production build
-      // .get(`/posts/${props.postId}`)
+      .get(`/posts/${props.postId}`)
       .then((res) => {
         // console.log(res.data);
         setComments(res.data);

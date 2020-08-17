@@ -27,21 +27,20 @@ class Commentform extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     axios
-      .post(
-        `http://localhost:${process.env.PORT || 3000}/posts/${
-          this.props.postId
-        }`,
-        {
-          commentText: this.state.commentText,
-          userName: 'hihenry',
-        }
-      )
-      // use below for production build
-      // .post(`/posts/${this.props.postId}`,
+      // .post(
+      //   `http://localhost:${process.env.PORT || 3000}/posts/${
+      //     this.props.postId
+      //   }`,
       //   {
       //     commentText: this.state.commentText,
       //     userName: 'hihenry',
-      //   })
+      //   }
+      // )
+      // use below for production build
+      .post(`/posts/${this.props.postId}`, {
+        commentText: this.state.commentText,
+        userName: 'hihenry',
+      })
       .then((res) => {
         // console.log(res);
         this.clearText();

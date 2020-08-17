@@ -34,13 +34,13 @@ class Postreactions extends React.Component {
       return;
     } else {
       axios
-        .put(
-          `http://localhost:${process.env.PORT || 3000}/posts/${
-            this.props.postId
-          }/like`
-        )
+        // .put(
+        //   `http://localhost:${process.env.PORT || 3000}/posts/${
+        //     this.props.postId
+        //   }/like`
+        // )
         // use below for production build
-        // .put(`/posts/${this.props.postId}/like`)
+        .put(`/posts/${this.props.postId}/like`)
         .then(() => {
           this.props.updateReactions();
         })
@@ -63,13 +63,13 @@ class Postreactions extends React.Component {
       return;
     } else {
       axios
-        .put(
-          `http://localhost:${process.env.PORT || 3000}/posts/${
-            this.props.postId
-          }/dislike`
-        )
+        // .put(
+        //   `http://localhost:${process.env.PORT || 3000}/posts/${
+        //     this.props.postId
+        //   }/dislike`
+        // )
         // use below for production build
-        // .put(`/posts/${this.props.postId}/dislike`)
+        .put(`/posts/${this.props.postId}/dislike`)
         .then(() => {
           this.props.updateReactions();
         })

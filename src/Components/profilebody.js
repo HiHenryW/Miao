@@ -27,6 +27,7 @@ function Profilebody(props) {
       <Profilemodal
         modalVisible={modalVisible}
         setVisibility={setVisibility}
+        setCurrentImage={setCurrentImage}
         currentImage={currentImage}
         users={props.users}
         currentUser={props.currentUser}

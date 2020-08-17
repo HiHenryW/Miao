@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { MdClose } from 'react-icons/Md';
 import { IconContext } from 'react-icons';
 import Commentform from './commentform';
@@ -9,6 +10,27 @@ import Postreactions from './postreactions';
 import Timestamp from './timestamp';
 
 function Profilemodal(props) {
+  const [comments, setComments] = useState([]);
+  const [reRender, forceReRender] = useState(0);
+
+  useEffect(() => {
+    axios
+      .get(
+        `http://localhost:${process.env.PORT || 3000}/posts/${
+          props.currentImage._id
+        }`
+      )
+      // use below for production build
+      // .get(`/posts/${props.postId}`)
+      .then((res) => {
+        // console.log(res.data);
+        setComments(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [reRender, props.currentImage._id]);
+
   if (props.modalVisible) {
     return (
       <div className="modal-wrapper">
@@ -16,6 +38,7 @@ function Profilemodal(props) {
           className="close-button"
           onClick={() => {
             props.setVisibility(false);
+            props.setCurrentImage('');
           }}
         >
           <IconContext.Provider
@@ -45,7 +68,7 @@ function Profilemodal(props) {
                       username={props.currentUser}
                     />
                     <Timestamp createdAt={props.currentImage.createdAt} />
-                    <Postcomments postId={props.currentImage._id} />
+                    <Postcomments comments={comments} />
                   </div>
                   <Postreactions
                     postLikes={props.currentImage.postLikes}
@@ -53,7 +76,11 @@ function Profilemodal(props) {
                     postId={props.currentImage._id}
                     updateReactions={props.updateReactions}
                   />
-                  <Commentform postId={props.currentImage._id} />
+                  <Commentform
+                    postId={props.currentImage._id}
+                    reRender={reRender}
+                    forceReRender={forceReRender}
+                  />
                 </div>
               </div>
             </div>

@@ -40,6 +40,7 @@ function PostContainer(props) {
           postDislikes={props.postDislikes}
           postId={props.postId}
           updateReactions={props.updateReactions}
+          updateLocalStorage={props.updateLocalStorage}
         />
         <Postdescription postDesc={props.postDesc} username={props.username} />
         <Postcomments comments={comments} />

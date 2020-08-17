@@ -19,6 +19,7 @@ class App extends React.Component {
     this.updateReactions = this.updateReactions.bind(this);
     this.updateView = this.updateView.bind(this);
     this.countPosts = this.countPosts.bind(this);
+    this.updateLocalStorage = this.updateLocalStorage.bind(this);
   }
 
   componentDidMount() {
@@ -89,6 +90,26 @@ class App extends React.Component {
     return postCount;
   }
 
+  updateLocalStorage(postId, action) {
+    if (!window.localStorage.getItem('reactedPosts')) {
+      let storedIds;
+      if (action === 'like') {
+        storedIds = { likes: [postId], dislikes: [] };
+      } else if (action === 'dislike') {
+        storedIds = { likes: [], dislikes: [postId] };
+      }
+      window.localStorage.setItem('reactedPosts', JSON.stringify(storedIds));
+    } else {
+      const oldIds = JSON.parse(window.localStorage.getItem('reactedPosts'));
+      if (action === 'like') {
+        oldIds.likes.push(postId);
+      } else if (action === 'dislike') {
+        oldIds.dislikes.push(postId);
+      }
+      window.localStorage.setItem('reactedPosts', JSON.stringify(oldIds));
+    }
+  }
+
   render() {
     if (this.state.currentView === 'home') {
       return (
@@ -108,6 +129,7 @@ class App extends React.Component {
               posts={this.state.posts}
               updateReactions={this.updateReactions}
               updateView={this.updateView}
+              updateLocalStorage={this.updateLocalStorage}
             />
           </div>
         </>

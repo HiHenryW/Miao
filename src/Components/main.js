@@ -15,6 +15,7 @@ function Main(props) {
         createdAt={post.createdAt}
         updateReactions={props.updateReactions}
         updateView={props.updateView}
+        updateLocalStorage={props.updateLocalStorage}
       />
     </div>
   ));

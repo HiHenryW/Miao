@@ -17,7 +17,7 @@ function Profilemodal(props) {
     axios
       .get(
         `http://localhost:${process.env.PORT || 3000}/posts/${
-          props.currentImage._id
+          props.currentImageId
         }`
       )
       // use below for production build
@@ -29,7 +29,7 @@ function Profilemodal(props) {
       .catch((err) => {
         console.log(err);
       });
-  }, [reRender, props.currentImage._id]);
+  }, [reRender, props.currentImageId]);
 
   if (props.modalVisible) {
     return (
@@ -54,7 +54,7 @@ function Profilemodal(props) {
                 <div className="modal-content-image-wrapper">
                   <img
                     className="modal-content-image"
-                    src={props.currentImage.postImage}
+                    src={props.postImage}
                   ></img>
                 </div>
                 <div className="modal-details-wrapper">
@@ -64,21 +64,21 @@ function Profilemodal(props) {
                   />
                   <div className="modal-interactive-container">
                     <Postdescription
-                      postDesc={props.currentImage.postDesc}
+                      postDesc={props.postDesc}
                       username={props.currentUser}
                     />
-                    <Timestamp createdAt={props.currentImage.createdAt} />
+                    <Timestamp createdAt={props.createdAt} />
                     <Postcomments comments={comments} />
                   </div>
                   <Postreactions
-                    postLikes={props.currentImage.postLikes}
-                    postDislikes={props.currentImage.postDislikes}
-                    postId={props.currentImage._id}
+                    postLikes={props.postLikes}
+                    postDislikes={props.postDislikes}
+                    postId={props.currentImageId}
                     updateReactions={props.updateReactions}
                     updateLocalStorage={props.updateLocalStorage}
                   />
                   <Commentform
-                    postId={props.currentImage._id}
+                    postId={props.currentImageId}
                     reRender={reRender}
                     forceReRender={forceReRender}
                   />

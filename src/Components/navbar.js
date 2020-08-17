@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../logo/miao-logo.png';
+import Searchform from './searchform';
 import { AiFillHome, AiOutlineHome } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 
@@ -21,7 +22,7 @@ function Navbar(props) {
       }
     >
       <img src={logo} alt="miao-logo" className="miao-logo"></img>
-      <input className="searchbar" type="text" placeholder="Search"></input>
+      <Searchform users={props.users} updateView={props.updateView} />
       <div className="navbar-icons-container">
         <a className="navbar-home" onClick={() => props.updateView('home')}>
           {props.currentView === 'home' ? (

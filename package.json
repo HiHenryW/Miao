@@ -13,7 +13,7 @@
     "web-start": "webpack-dev-server --hot --mode development",
     "start-dev": "nodemon --exec babel-node ./back-end/index.js",
     "start": "node ./back-end/index.js",
-    "heroku-postbuild": "webpack -d"
+    "heroku-postbuild": "webpack -p"
   },
   "dependencies": {
     "axios": "^0.19.2",

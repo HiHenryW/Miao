@@ -1,26 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 
 function Postcomments(props) {
-  const [comments, setComments] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:${process.env.PORT || 3000}/posts/${props.postId}`)
-      // use below for production build
-      // .get(`/posts/${props.postId}`)
-      .then((res) => {
-        // console.log(res.data);
-        setComments(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  });
-
   return (
     <div className="comment-list-container">
-      {comments.map((comment, i) => {
+      {props.comments.map((comment, i) => {
         return (
           <div key={i} className="comment-list-item">
             <a className="comment-list-user">{comment.userName}</a>

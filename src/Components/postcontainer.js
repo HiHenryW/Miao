@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Postheader from './postheader';
 import Postimage from './postimage';
 import Postreactions from './postreactions';
@@ -8,6 +9,23 @@ import Timestamp from './timestamp';
 import Commentform from './commentform';
 
 function PostContainer(props) {
+  const [comments, setComments] = useState([]);
+  const [reRender, forceReRender] = useState(0);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:${process.env.PORT || 3000}/posts/${props.postId}`)
+      // use below for production build
+      // .get(`/posts/${props.postId}`)
+      .then((res) => {
+        // console.log(res.data);
+        setComments(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [reRender]);
+
   return (
     <>
       <article>
@@ -24,9 +42,13 @@ function PostContainer(props) {
           updateReactions={props.updateReactions}
         />
         <Postdescription postDesc={props.postDesc} username={props.username} />
-        <Postcomments postId={props.postId} />
+        <Postcomments comments={comments} />
         <Timestamp createdAt={props.createdAt} />
-        <Commentform postId={props.postId} />
+        <Commentform
+          postId={props.postId}
+          reRender={reRender}
+          forceReRender={forceReRender}
+        />
       </article>
     </>
   );

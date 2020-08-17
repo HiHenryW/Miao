@@ -46,6 +46,9 @@ class Commentform extends React.Component {
         // console.log(res);
         this.clearText();
       })
+      .then(() => {
+        this.props.forceReRender(this.props.reRender + 1);
+      })
       .catch((err) => {
         console.log(err);
       });

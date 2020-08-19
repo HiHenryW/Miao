@@ -21,7 +21,7 @@ function Profilemodal(props) {
       //   }`
       // )
       // use below for production build
-      .get(`/posts/${props.postId}`)
+      .get(`/posts/${props.currentImageId}`)
       .then((res) => {
         // console.log(res.data);
         setComments(res.data);

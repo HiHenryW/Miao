@@ -8,10 +8,16 @@ First install dependencies:
 npm install
 ```
 
-To run in hot module reloading mode:
+Run development server:
 
 ```sh
-npm start
+npm run start-dev
+```
+
+Run client in hot module reloading mode:
+
+```sh
+npm run web-start
 ```
 
 To create a production build:
@@ -28,7 +34,31 @@ npm run build-dev
 
 ## Running
 
-Open the file `dist/index.html` in your browser
+Navigate to `http://localhost:8080/` in your browser which should now be displaying the client.
+
+## Deployment
+
+Checkout the deployment branch:
+
+```sh
+git checkout master-deployment
+```
+
+The main difference between the master-deployment and master branches is in the base urls for axios requests on the client side.
+
+Login to Heroku:
+
+```sh
+heroku login
+```
+
+Make sure any changes made are committed and pushed to the master-deployment branch.
+
+Deploy updated code to Heroku:
+
+```sh
+git push heroku master-deployment:master
+```
 
 ## Credits
 

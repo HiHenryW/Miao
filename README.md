@@ -32,6 +32,16 @@ To create a development build:
 npm run build-dev
 ```
 
+## Tech Stack
+
+- Axios
+- Babel
+- Express
+- Moment.js
+- MongoDB / Mongoose
+- React
+- Webpack
+
 ## Running
 
 Navigate to `http://localhost:8080/` in your browser which should now be displaying the client.
